@@ -1,6 +1,8 @@
 # Demo Service 
 [Problem statement](problem.text)
 
+![ER Diagram](ER_Diagram.png)
+
   - Build commands 
     ```shell
     ruchirgupta@Ruchirs-MacBook-Pro demo-service % mvn clean install package -DskipTests && mvn spring-boot:run
