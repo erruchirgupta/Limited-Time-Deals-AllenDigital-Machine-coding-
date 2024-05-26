@@ -1,7 +1,8 @@
 # Demo Service 
 [Problem statement](problem.text)
 
-![ER Diagram](ER_Diagram.png)
+<img title="ER Diagram" src="ER_Diagram.png" width=550 height=750>
+
 
   - Build commands 
     ```shell
