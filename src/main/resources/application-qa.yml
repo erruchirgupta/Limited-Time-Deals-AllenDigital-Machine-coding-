@@ -1,0 +1,3 @@
+server:
+  appUrl: "https://server.qa.demo.app${server.servlet.contextPath}"
+

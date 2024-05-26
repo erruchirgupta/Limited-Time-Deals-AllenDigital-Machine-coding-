@@ -1,0 +1,97 @@
+server:
+  shutdown: "graceful"
+  port: 12024
+  servlet:
+    contextPath: /api
+
+logging:
+  level:
+    root: INFO
+    com:
+      ruchir:
+        demo:
+          config:
+            CustomRequestLoggingFilter: DEBUG
+### SPRING CONFIGS
+spring:
+  application:
+    name: demo-service-${spring.profiles.active}
+  profiles:
+    active: local
+  banner:
+    location: classpath:/file/banner.txt
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+  lifecycle:
+    timeout-per-shutdown-phase: "45s"
+  rdbms:
+    demo:
+      primary:
+        datasource:
+          baseurl: "localhost:3360"
+          schema: "demo"
+          url: "jdbc:mysql://${spring.rdbms.demo.primary.datasource.baseurl}/${spring.rdbms.demo.primary.datasource.schema}?allowPublicKeyRetrieval=true&useUnicode=true&character_set_server=utf8mb4&useSSL=false&createDatabaseIfNotExist=true&tinyInt1isBit=false&zeroDateTimeBehavior=CONVERT_TO_NULL" #&useLegacyDatetimeCode=false"
+          minimumIdle: 2
+          username: "root"
+          password: "root"
+          maximumPoolSize: 5
+          idleTimeout: 30000
+          poolName: PrimaryDemoCP
+          maxLifetime: 2000000
+          connectionTimeout: 30000
+        hibernate:
+          ddl-auto: validate
+          show_sql: true
+          default_schema: "${spring.rdbms.demo.primary.datasource.schema}"
+          jdbc_fetch_size: 250
+          use_reflection_optimizer: false
+          use_second_level_cache: false
+          use_query_cache: false
+          generate_statistics: true
+          jdbc:
+            batch_size: 300
+            order_inserts: true
+            time_zone: "Asia/Kolkata"
+      secondary:
+        datasource:
+          baseurl: "localhost:3360"
+          schema: "demo"
+          url: "jdbc:mysql://${spring.rdbms.demo.secondary.datasource.baseurl}/${spring.rdbms.demo.secondary.datasource.schema}?allowPublicKeyRetrieval=true&useUnicode=true&character_set_server=utf8mb4&useSSL=false&createDatabaseIfNotExist=true&tinyInt1isBit=false&zeroDateTimeBehavior=CONVERT_TO_NULL" #&useLegacyDatetimeCode=false"
+          region_factory_class: jcache
+          cache_provider: org.ehcache.jsr107.EhcacheCachingProvider
+          username: "root"
+          password: "root"
+          minimumIdle: 2
+          maximumPoolSize: 5
+          idleTimeout: 30000
+          poolName: SecondaryDemoCP
+          maxLifetime: 2000000
+          connectionTimeout: 30000
+        hibernate:
+          ddl-auto: validate
+          show_sql: true
+          default_schema: "${spring.rdbms.demo.secondary.datasource.schema}"
+          jdbc_fetch_size: 250
+          jdbc:
+            time_zone: "Asia/Kolkata"
+
+### ACTUATOR CONFIGS
+management:
+  server:
+    port: 10103
+  endpoints:
+    enabled-by-default: false
+    web:
+      base-path: /actuator
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    health:
+      enabled: true
+      sensitive: false
+    info:
+      enabled: true
+      sensitive: false
+    prometheus:
+      enabled: true

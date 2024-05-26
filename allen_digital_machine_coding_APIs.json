@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "953d8660-fcb2-4005-9231-0acca518daf7",
+		"name": "Allen Digital - Machine coding round (Limited Deal) APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "1648669"
+	},
+	"item": [
+		{
+			"name": "Add Customer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Ruchir Gupta\",\n    \"contact\": 8072696166,\n    \"triggeredBy\": \"Ruchir\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:12024/api/v1/customer"
+			},
+			"response": []
+		},
+		{
+			"name": "OnBoard Seller",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Ruchir Gupta\",\n    \"email\": \"erruchirgupta@gmail.com\",\n    \"aadharNumber\": \"111122223333\",\n    \"panNumber\": \"AAABB9999C\",\n    \"gstin\": \"22AAAAA0000A1Z5\",\n    \"contact\": 8072696166,\n    \"triggeredBy\": \"Ruchir\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:12024/api/v1/seller"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sellerId\": 1,\n    \"name\": \"Nike Shoes - Skybirds\",\n    \"uom\": \"Pieces\",\n    \"unitValue\": \"1\",\n    \"maxSellingPrice\": 1500.50,\n    \"totalStock\": 10,\n    \"triggeredBy\": \"Ruchir\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:12024/api/v1/product"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Deals",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sellerId\": 1,\n    \"name\": \"Nike Shoes - Skybirds\",\n    \"uom\": \"Pieces\",\n    \"unitValue\": \"1\",\n    \"maxSellingPrice\": 1500.50,\n    \"totalStock\": 10,\n    \"triggeredBy\": \"Ruchir\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:12024/api/v1/product"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Deals Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sellerId\": 1,\n    \"name\": \"Nike Shoes - Skybirds\",\n    \"uom\": \"Pieces\",\n    \"unitValue\": \"1\",\n    \"maxSellingPrice\": 1500.50,\n    \"totalStock\": 10,\n    \"triggeredBy\": \"Ruchir\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:12024/api/v1/product"
+			},
+			"response": []
+		},
+		{
+			"name": "Inward Product Stock",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productId\": 1,\n    \"stockQuantity\": 10,\n    \"triggeredBy\": \"Ruchir\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:12024/api/v1/product/inward"
+			},
+			"response": []
+		}
+	]
+}

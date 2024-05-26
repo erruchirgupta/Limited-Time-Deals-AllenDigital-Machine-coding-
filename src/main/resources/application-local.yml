@@ -1,0 +1,2 @@
+server:
+  appUrl: "http://localhost:${server.port}${server.servlet.contextPath}"
