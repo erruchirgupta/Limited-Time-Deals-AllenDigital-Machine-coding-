@@ -1,4 +1,4 @@
-# ![AllenDigital logo](https://media.licdn.com/dms/image/D4D16AQH7hUr-AOKy6g/profile-displaybackgroundimage-shrink_200_800/0/1684388379016?e=2147483647&v=beta&t=Fh7C01raTTETWik1iFYW4TKYiA0GYb8-3-NTUAfoghM) <br> AllenDigital | Senior Software Engineer (SDE 3) (May-2024)
+# ![AllenDigital logo](https://media.licdn.com/dms/image/D4D16AQH7hUr-AOKy6g/profile-displaybackgroundimage-shrink_200_800/0/1684388379016?e=2147483647&v=beta&t=Fh7C01raTTETWik1iFYW4TKYiA0GYb8-3-NTUAfoghM) <br> Allen Digital | Senior Software Engineer (SDE 3) (May-2024)
 ## BarRaiser | Machine Coding Round
 ### [Problem Statement - Limited Time Deals](problem.text)
 You are a budding entrepreneur who devised an idea to build an e-commerce giant like Amazon, Flipkart, Walmart, etc. As part of this ambition, you want to build a platform to duplicate the concept of Limited Time Deals.
